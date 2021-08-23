@@ -11,10 +11,10 @@ request(url , (error, response, body) => {
   console.log('body: ', body); // print the HTML for the Google homepage
 
   if (response.statusCode === 200) {
-   fs.writeFile(path, body, err => {
+    fs.writeFile(path, body, err => {
       if (err) {
         console.error(err);
-        return
+        return;
       }
       //file successfully written
       console.log(`Downloaded and saved ${body.length} bytes to ${path}`); //body.length shows body size from url
