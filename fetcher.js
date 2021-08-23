@@ -11,7 +11,7 @@ request(url , (error, response, body) => {
   console.log('body: ', body); // print the HTML for the Google homepage
 
   if (response.statusCode === 200) {
-    fs.writeFile(path, body, err => {
+    fs.writeFile(path, body, 'utf8', (err) => {
       if (err) {
         console.error(err);
         return;
